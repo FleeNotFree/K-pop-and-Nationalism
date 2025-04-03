@@ -84,7 +84,7 @@ meta_data$fan <- as.factor(meta_data$fan)
 for (frame_name in frame_order) {
   legal_name <- make.names(frame_name)
   
-  formula <- as.formula(paste0("`", legal_name, "` ~ event + fan"))
+  formula <- as.formula(paste0("`", legal_name, "` ~ event * fan"))
   model <- lm(formula, data = meta_data)
   
   cat("\n==== Effects for frame:", frame_name, "====\n")
